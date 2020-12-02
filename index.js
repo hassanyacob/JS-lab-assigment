@@ -3,5 +3,5 @@ fetch("hw.json")
 .then(data => {
      console.log(data)
      const myObj = JSON.parse(this.responseText)
-     document.quuerySelector(#demo).innerText =myObj.topping
+     document.quuerySelector(#demo).innerText =data.topping
 })
