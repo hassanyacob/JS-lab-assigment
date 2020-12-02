@@ -1,1 +1,1 @@
-fetch("hw.json")
+fetch("hw.json");
