@@ -1,3 +1,6 @@
+// create a constant array:
+const arr = ["gg", "bb", "cc"];
+
 [
 	{
 		"id": "0001",
