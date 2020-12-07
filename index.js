@@ -1,4 +1,4 @@
-const response = '[\
+const jdata = '[\
 	{\
 		"id": "0001",\
 		"type": "donut",\
@@ -69,38 +69,42 @@ const response = '[\
 	}\
 ]';
 
-
-const sweet = JSON.parse(response);
-
+fetch("hw.json")
+.then(response => response.json())
+.then(data => {
+     console.log(data)
+})
+console.log("==============================");
+const gg = JSON.parse(jdata);
 var sum = 0;
-console.log("topping types: ");
-for (var index = 0; index < sweet.length; index++) {
-	var donut = sweet[index];
+console.log("topping types is: ");
+for (var index = 0; index < gg.length; index++) {
+	var donut = gg[index];
 	sum += donut.ppu;
 	var toppings =  donut.topping;
 	for (var i = 0; i < toppings.length; i++) {
 		console.log(toppings[i].type)	
 	}
 }
-console.log("*****************");
+console.log("==============================");
 
-console.log("batter types: ");
-for (var index = 0; index < sweet.length; index++) {
-	var donut = sweet[index];
+console.log("batter types is: ");
+for (var index = 0; index < gg.length; index++) {
+	var donut = gg[index];
 	var batter =  donut.batters.batter;
 	for (var i = 0; i < batter.length; i++) {
 		console.log(batter[i].type)	
 	}
 }
-console.log("*****************");
+console.log("=============================");
 
 console.log("sum is "+sum);
 
-console.log("average is "+sum / sweet.length);
+console.log("average is "+sum / gg.length);
 
 console.log("ID'S: ");
-for (var index = 0; index < sweet.length; index++) {
-	var donut = sweet[index];
+for (var index = 0; index < gg.length; index++) {
+	var donut = gg[index];
 	console.log(donut.id);
 	var batter =  donut.batters.batter;
 	for (var i = 0; i < batter.length; i++) {
@@ -111,5 +115,5 @@ for (var index = 0; index < sweet.length; index++) {
 		console.log(toppings[i].id)	
 	}
 }
-console.log("*****************");
+console.log("================================");
 
